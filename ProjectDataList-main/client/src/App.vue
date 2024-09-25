@@ -694,11 +694,12 @@ button5:hover {
   font-weight: bolder;
 }
 .eu{
-  margin-top: 20px;
-  margin-left: 80px;
+  margin-top: 80px;
+  margin-left: 50px;
 }
 .eu h4, .eu h6{
   margin-left: 50px;
+  padding-right: 20px;
 }
 .dropbox {
  outline: 2px dashed grey; /* the dash box */

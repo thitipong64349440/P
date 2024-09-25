@@ -1,55 +1,4 @@
 <template>
-    <!-- <div class="hero_area">
-        <div class="hero_bg_box">
-            <div class="bg_img_box">
-                <img src="./assets/hero-bg.png" alt="">
-            </div>
-        </div>
-        <header class="header_section">
-            <div class="container-fluid">
-                <nav class="navbar navbar-expand-lg custom_nav-container ">
-                    <a class="navbar-brand">
-                        <span>
-                            Delcom
-                        </span>
-                    </a>
-                    <div class="collapse navbar-collapse" id="navbarSupportedContent">
-                        <ul class="navbar-nav">
-                            <li class="nav-item active">
-                                <a class="nav-link" v-on:click="navigateTo('/indexs/' + person.id)">หน้าหลัก</a><span
-                                    class="sr-only">(current)</span>
-                            </li>
-                            <div v-if="person && person.type === 'company'">
-                                <li class="nav-item">
-                                    <a class="nav-link" v-on:click="navigateTo('/edit/' + person.id)">
-                                        {{ person.name }}<span class="sr-only">(current)</span>
-                                    </a>
-                                </li>
-                            </div>
-                            <div v-else-if="person && person.type === 'shop'">
-                                <li class="nav-item">
-                                    <a class="nav-link1" v-on:click="navigateTo('/edit/' + person.id)">
-                                        <a1>{{ person.name }}</a1><span class="sr-only">(current)</span>
-                                    </a>
-                                </li>
-                            </div>
-                            <div v-else>
-                                <li class="nav-item">
-                                    <a class="nav-link2" v-on:click="navigateTo('/replyA/' + person.id)">
-                                        <a1>{{ person.name }}</a1><span class="sr-only"></span>
-                                    </a>
-                                </li>
-                            </div>
-                            <li class="nav-item">
-                                <a class="nav-link3" v-on:click="logout">
-                                    <a1>Logout</a1>
-                                </a>
-                            </li>
-                        </ul>
-                    </div>
-                </nav>
-            </div>
-        </header> -->
     <div class="hero_area">
         <div class="hero_bg_box">
             <div class="bg_img_box">
@@ -73,7 +22,7 @@
             <a style="color: aliceblue;" v-on:click="logout">Logout</a>
             <a href="javascript:void(0);" class="icon" @click="toggleMenu"><i class="fa fa-bars"></i></a>
         </div>
-        <section class="service_section layout_padding">
+        <section class="service_section service_section1 layout_padding">
             <div class="service_container">
                 <div class="container ">
                     <div v-if="person && person.type === 'company'">
@@ -218,7 +167,7 @@ export default {
     methods: {
         navigateTo(route) {
             this.$router.push(route)
-        }, 
+        },
         toggleMenu() {
             const checkbox = document.getElementById('myTopnav')
             if (checkbox.className === 'topnav') {
@@ -234,7 +183,9 @@ export default {
                 name: 'login'
             })
         },
-       
+
     }
 }
 </script>
+<style>
+</style>

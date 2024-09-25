@@ -7,10 +7,12 @@
             <h1>
                 <span2>ข้อความ</span2>
             </h1>
+            <div class="CH">
             <div class="reply">
                 <h1>{{ person.name }}</h1>
                 <div class="hr1"></div>
-                <div v-for="message in messages" v-bind:key="message.id" v-if="message.personId != person.id && message.postCId === null">
+                <div v-for="message in messages" v-bind:key="message.id"
+                    v-if="message.personId != person.id && message.postCId === null">
                     <div class="message_text" v-if="message.type === 'company'">
                         <h5 style="color: black;">{{ message.comment }}</h5>
                         <h3 style="color: black;">จาก {{ message.company_name }}</h3>
@@ -20,7 +22,8 @@
                         <h3 style="color: black;">จาก {{ message.shop_name }}</h3>
                     </div>
                 </div>
-                <button v-on:click="navigateTo('/chatA/' + person.id)">ตอบข้อความ</button>
+                <button style="margin-bottom: 20px;" v-on:click="navigateTo('/chatA/' + person.id)">ตอบข้อความ</button>
+            </div>
             </div>
         </div>
     </div>
@@ -75,15 +78,52 @@ export default {
 .full span2 {
     color: #ffffff;
 }
-
+.CH{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
 .reply {
     background-color: #ffffff;
     display: flex;
     flex-direction: column;
     align-items: center;
     flex-direction: column;
-    margin: 50px 25% 0px 25%;
-    padding: 20px 0px 50px 0px;
-    border-radius: 20px 20px 20px 20px;
+    width: 30%;
+    margin-top: 30px;
+    border-radius: 5%;
+}
+.hr1 {
+    margin: 10px 0;
+}
+
+.message_text {
+    padding: 50px;
+    background-color: #f1f1f1;
+}
+
+.message_text h5 {
+    margin-bottom: 15px;
+}
+
+.message_text h3 {
+    font-size: 1rem;
+}
+
+/* ปรับแต่งสำหรับหน้าจอมือถือ */
+@media (max-width: 768px) {
+    .reply {
+        width: 80%;
+        padding: 15px;
+        border-radius: 10px;
+    }
+
+    h1 {
+        font-size: 1.5rem;
+    }
+
+    h5 {
+        font-size: 1rem;
+    }
 }
 </style>

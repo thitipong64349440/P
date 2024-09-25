@@ -167,63 +167,6 @@ export default {
     margin-top: 20px;
     box-shadow: 0 0 15px rgba(0, 0, 0, 0.5);
   }
-  /* nav ul li a:not(.icon){
-    display: none;
-  }
-  nav ul li a.icon{
-    display: block;
-    margin-left: auto;
-    cursor: pointer;
-  }
-  a i{
-    color: #ffffff;
-    float: right;
-  }
-  .topnav a:not(:first-child) {display: none;}
-  .topnav a.icon {
-    float: right;
-    display: block;
-  } */
 }
-/* @media (max-width: 768px) {
-  .topnav.responsive {position: relative;}
-  .topnav.responsive a.icon {
-    position: absolute;
-    right: 0;
-    top: 0;
-  }
-  .topnav.responsive a {
-    float: none;
-    display: block;
-    text-align: left;
-  }
-}
-.topnav {
-  overflow: hidden;
-}
-
-.topnav a {
-  float: left;
-  display: block;
-  color: #f2f2f2;
-  text-align: center;
-  padding: 14px 16px;
-  text-decoration: none;
-  font-size: 17px;
-}
-
-.topnav a:hover {
-  background-color: #ddd;
-  color: black;
-}
-
-.topnav a.active {
-  background-color: #5a35ec;
-  color: white;
-}
-
-.topnav .icon {
-  display: none;
-} */
 
 </style>

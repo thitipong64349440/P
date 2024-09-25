@@ -49,7 +49,7 @@
         </div>
       </div>
     </section>
-    <section class="service_section layout_padding">
+    <section class="service_section service_section_h layout_padding">
       <div class="container">
         <div style="margin-bottom: 30px;" class="heading_container">
           <h2 style="margin-top: 20px;">

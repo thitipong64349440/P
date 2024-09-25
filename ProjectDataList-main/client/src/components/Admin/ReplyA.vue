@@ -5,35 +5,19 @@
                 <img src="../assets/hero-bg.png" alt="">
             </div>
         </div>
-        <header class="header_section">
-            <div class="container-fluid">
-                <nav class="navbar navbar-expand-lg custom_nav-container ">
-                    <a class="navbar-brand">
-                        <span>
-                            Delcom
-                        </span>
-                    </a>
-                    <div class="collapse navbar-collapse" id="navbarSupportedContent">
-                        <ul class="navbar-nav">
-                            <li class="nav-item">
-                                <a class="nav-link" v-on:click="navigateTo('/indexs/' + person.id)">หน้าหลัก</a><span
-                                    class="sr-only">(current)</span>
-                            </li>
-                            <li class="nav-item">
-                                <a class="nav-link2" v-on:click="navigateTo('/replyA/' + person.id)">
-                                    <a1>{{ person.name }}</a1><span class="sr-only"></span>
-                                </a>
-                            </li>
-                            <li class="nav-item">
-                                <a class="nav-link3" v-on:click="logout">
-                                    <a1>Logout</a1>
-                                </a>
-                            </li>
-                        </ul>
-                    </div>
-                </nav>
-            </div>
-        </header>
+        <a class="navbar-brand">
+            <span>
+                Delcom
+            </span>
+        </a>
+        <link rel="stylesheet"
+            href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+        <div class="topnav" id="myTopnav">
+            <a style="color: aliceblue;" v-on:click="navigateTo('/indexs/' + person.id)">หน้าหลัก</a>
+            <a style="color: yellow;" v-on:click="navigateTo('/replyA/' + person.id)"  class="active">{{ person.name }}</a>
+            <a style="color: aliceblue;" v-on:click="logout">Logout</a>
+            <a href="javascript:void(0);" class="icon" @click="toggleMenu"><i class="fa fa-bars"></i></a>
+        </div>
         <section class="service_section layout_padding">
             <div class="service_container">
                 <div class="container ">
@@ -107,6 +91,14 @@ export default {
     methods: {
         navigateTo(route) {
             this.$router.push(route)
+        },
+        toggleMenu() {
+            const checkbox = document.getElementById('myTopnav')
+            if (checkbox.className === 'topnav') {
+                checkbox.className += ' responsive'
+            } else {
+                checkbox.className = 'topnav'
+            }
         },
         logout() {
             this.$store.dispatch('setToken', null)

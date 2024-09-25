@@ -180,4 +180,60 @@ export default {
     padding: 20px 0px 50px 0px;
     border-radius: 20px 20px 20px 20px;
 }
+
+/* Media Queries สำหรับหน้าจอโทรศัพท์ */
+@media (max-width: 767px) {
+    button1 {
+        font-size: 0.9rem;
+        padding: 8px 16px;
+    }
+
+    button1 i {
+        margin-top: 20px;
+        font-size: 1.25rem;
+    }
+
+    select.purpose,
+    .message_box textarea {
+        font-size: 0.9rem;
+    }
+
+    button[type="submit"],
+    button[type="reset"],
+    button[type="button"] {
+        font-size: 0.9rem;
+        padding: 8px;
+    }
+
+    .reply {
+        width: 60%;
+        padding: 20px;
+    }
+
+    .message_box textarea {
+        width: 100%;
+        padding: 10px;
+        border-radius: 5px;
+    }
+
+    select.purpose {
+        width: 100%;
+        padding: 10px;
+        border-radius: 5px;
+        border: 1px solid #ccc;
+        margin-bottom: 20px;
+    }
+
+
+    .hr1 {
+        border-bottom: 1px solid #ccc;
+        margin: 10px 0;
+    }
+
+    .message_text h3 {
+        color: green;
+        text-align: center;
+        font-size: 20px;
+    }
+}
 </style>

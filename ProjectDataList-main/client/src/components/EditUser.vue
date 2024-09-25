@@ -22,8 +22,7 @@
             <a style="color: aliceblue;" v-on:click="logout">Logout</a>
             <a href="javascript:void(0);" class="icon" @click="toggleMenu"><i class="fa fa-bars"></i></a>
         </div>
-        <div2 class="EU"
-            style="display: flex; flex-direction: column; align-items: center; width: 35%; background-color: white; border-radius: 20px; margin: 0 auto;">
+        <div2 class="EU">
             <div class="edituser" v-if="person && person.type === 'company'">
                 <h1>{{ person.company_name }}</h1>
                 <div v-if="!isMessaging && hasMatchedMessage(person)">
@@ -56,7 +55,7 @@
                     </div>
                 </div>
                 <div v-if="isEditing">
-                    <div class="eu">
+                    <div class="eu eu1">
                         <a>ชื่อ-นามสกุล:</a>
                         <p></p>
                         <input v-model="person.name" type="text" /><input v-model="person.lastname" type="text" />
@@ -96,7 +95,7 @@
                     </div>
                 </div>
                 <div class="message_box" v-if="!isSend">
-                    <textarea style="margin-left: 70px;" v-model="message.comment" placeholder="ข้อความ"></textarea>
+                    <textarea style="" v-model="message.comment" placeholder="ข้อความ"></textarea>
                     <button style="margin-left: 20px;" type="submit">ส่ง</button>
                 </div>
                 <div class="message" v-else>
@@ -226,6 +225,8 @@ export default {
     border-radius: 20px;
     margin: 20px auto;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    background-color: aliceblue;
+    width: 30%;
 }
 
 /* การตั้งค่าสำหรับชื่อบริษัทและร้าน */
@@ -237,6 +238,12 @@ export default {
 /* การตั้งค่าฟอร์ม */
 form {
     width: 100%;
+}
+form .message_text{
+    width: 100%;
+    padding: 10px;
+    word-wrap: break-word;
+        white-space: normal; 
 }
 
 .eu a {
@@ -252,7 +259,7 @@ form {
 }
 
 /* การตั้งค่ากล่องข้อความ */
-textarea {
+.EU textarea {
     width: 100%;
     height: 100px;
     padding: 10px;
@@ -272,11 +279,9 @@ textarea {
     .EU {
         width: 90%;
     }
-
-    button4 {
-        float: none;
-        width: 100%;
-        margin-bottom: 15px;
+    .EU button{
+        margin: 0 auto;
+        width: 50%;
     }
 
     textarea {
@@ -285,8 +290,24 @@ textarea {
     }
 
     .message_box button {
-        margin-left: 0;
+        width: 30%;
+        align-self: start;
+    }
+    form{
         width: 100%;
+        /* background-color: aquamarine; */
+        padding: 10px;
+    }
+    form .eu1{
+        margin: 0;
+        margin-top: 50px;
+    }
+    form .message_box textarea{
+        width: 100%;
+    }
+    form .message_text{
+        word-wrap: break-word;
+        white-space: normal;    
     }
 }
 

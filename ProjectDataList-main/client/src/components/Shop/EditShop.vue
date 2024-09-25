@@ -1,5 +1,5 @@
 <template>
-    <div class="about_section">
+    <div class="about_section about_sectionES">
         <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
         <div>
             <button1 v-on:click="navigateTo('/shop/' + person.id)"><a><i class="bi bi-caret-left">กลับ</i></a>
@@ -9,26 +9,37 @@
             <span2>แก้ไขข้อมูล</span2>
         </h1>
         <form enctype="multipart/form-data" v-on:submit.prevent="editShop" style=" padding: 20px;" novalidate>
-            <div style=" padding: 20px 300px;">
-                <div class="dropbox">
+            <!-- <div style=" padding: 20px 300px;"> -->
+                <div class="dropbox dropbox2">
                     <input type="file" multiple :name="uploadFieldName" :disabled="isSaving"
                         @change="filesChange($event.target.name, $event.target.files); fileCount = $event.target.files.length"
                         accept="image/*" class="input-file">
                     <p>
                         Drag your file(s) here to begin<br> or click to browse
                     </p>
-                </div>
+                <!-- </div> -->
             </div>
+            <!-- <form enctype="multipart/form-data" class="register-form" v-on:submit.prevent="editShop" novalidate>
+            <div class="dropbox dropbox1">
+                <input type="file" multiple :name="uploadFieldName" :disabled="isSaving"
+                    @change="filesChange($event.target.name, $event.target.files); fileCount = $event.target.files.length"
+                    accept="image/*" class="input-file">
+                <p>
+                    Drag your file(s) here to begin<br> or click to browse
+                </p>
+            </div> -->
             <div class="pictures-box">
                 <ul class="pictures">
-                    <div style="justify-content: center; display: flex; align-items: center;" v-if="shop.shop_img != null || shop.shop_img != []">
+                    <div style="justify-content: center; display: flex; align-items: center;"
+                        v-if="shop.shop_img != null || shop.shop_img != []">
                         <li v-for="(shop_img, index) in shopImages" :key="index">
                             <img :src="BASE_URL + shop_img" alt="shop_img">
                             <button1 v-on:click="deleteImg(shop_img)">ลบ</button1>
                             <button v-on:click.prevent="useThumbnail(shop_img)">ตั้งรูปหน้าปก</button>
                         </li>
                     </div>
-                    <li style="justify-content: center; display: flex; align-items: center;" v-for="picture in pictures" v-bind:key="picture.id">
+                    <li style="justify-content: center; display: flex; align-items: center;" v-for="picture in pictures"
+                        v-bind:key="picture.id">
                         <img style="margin-bottom:5px;" :src="BASE_URL + picture.name" alt="picture image">
                         <button1 v-on:click="deletePicture(picture)">ลบ</button1>
                         <button v-on:click.prevent="useThumbnail(picture.name)">ตั้งรูปหน้าปก</button>
@@ -41,34 +52,38 @@
                     <div class="content3">
                         <div class="text">
                             <div style="display: flex; justify-content: flex-start;margin-top: 10px;">
-                            <p style="margin-right: 25px; margin-left: 40%;">ชื่อสินค้า:</p>
-                            <input type="text" v-model="shop.product_name" style="flex: 1; margin-top: 0; height: 35px;">
+                                <p style="margin-right: 25px; margin-left: 40%;">ชื่อสินค้า:</p>
+                                <input type="text" v-model="shop.product_name"
+                                    style="flex: 1; margin-top: 0; height: 35px;">
                             </div>
                             <div style="display: flex; justify-content: flex-start;margin-top: 10px;">
-                            <p style="margin-right: 25px; margin-left: 37.9%;">จุดประสงค์:</p>
-                            <Multiselect class="multiselect1" v-model="selectedPurposesComputed"
-                                :options="purposeOptions" :multiple="true" :close-on-select="false"
-                                :clear-on-select="false" :preserve-search="true" :hide-selected="true"
-                                placeholder=". เลือกจุดประสงค์" label="text" track-by="value" style="flex: 1;" required/>
+                                <p style="margin-right: 25px; margin-left: 37.9%;">จุดประสงค์:</p>
+                                <Multiselect class="multiselect1" v-model="selectedPurposesComputed"
+                                    :options="purposeOptions" :multiple="true" :close-on-select="false"
+                                    :clear-on-select="false" :preserve-search="true" :hide-selected="true"
+                                    placeholder=". เลือกจุดประสงค์" label="text" track-by="value" style="flex: 1;"
+                                    required />
                             </div>
                             <div style="display: flex; justify-content: flex-start;margin-top: 10px;">
-                            <p style="margin-right: 25px; margin-left: 41.1%;">ประเภท:</p>
-                            <Multiselect class="multiselect1" v-model="selectedCategorysComputed"
-                                :options="categoryOptions" :multiple="true" :close-on-select="false"
-                                :clear-on-select="false" :preserve-search="true" :hide-selected="true"
-                                placeholder=". เลือกหมวดหมู่" label="text" track-by="value" style="flex: 1;" required/>
+                                <p style="margin-right: 25px; margin-left: 41.1%;">ประเภท:</p>
+                                <Multiselect class="multiselect1" v-model="selectedCategorysComputed"
+                                    :options="categoryOptions" :multiple="true" :close-on-select="false"
+                                    :clear-on-select="false" :preserve-search="true" :hide-selected="true"
+                                    placeholder=". เลือกหมวดหมู่" label="text" track-by="value" style="flex: 1;"
+                                    required />
                             </div>
                             <div style="display: flex; justify-content: flex-start;margin-top: 10px;">
-                            <p style="margin-right: 25px; margin-left: 42%;">จำนวน:</p>
-                            <input type="text" v-model="shop.quantity" style="flex: 1; margin-top: 0; height: 35px;">
+                                <p style="margin-right: 25px; margin-left: 42%;">จำนวน:</p>
+                                <input type="text" v-model="shop.quantity"
+                                    style="flex: 1; margin-top: 0; height: 35px;">
                             </div>
                             <div style="display: flex; justify-content: flex-start;margin-top: 10px;">
-                            <p style="margin-right: 25px; margin-left: 43.7%;">ราคา:</p>
-                            <input type="text" v-model="shop.price" style="flex: 1; margin-top: 0; height: 35px;">
+                                <p style="margin-right: 25px; margin-left: 43.7%;">ราคา:</p>
+                                <input type="text" v-model="shop.price" style="flex: 1; margin-top: 0; height: 35px;">
                             </div>
                             <div style="display: flex; justify-content: flex-start;margin-top: 10px;">
-                            <p style="margin-right: 25px; margin-left: 37%;">รายละเอียด:</p>
-                            <textarea style="width: 47%;" v-model="shop.detail"></textarea>
+                                <p style="margin-right: 25px; margin-left: 37%;">รายละเอียด:</p>
+                                <textarea style="width: 47%;" v-model="shop.detail"></textarea>
                             </div>
                         </div>
                     </div>
@@ -310,10 +325,112 @@ export default {
             const shopData = response.data
             this.shop.purpose = shopData.purpose
             this.shop.category = shopData.category
-            this.selectedPurposes = shopData.purpose.split(',').map(purpose => ({value: purpose, text: purpose}))
-            this.selectedCategorys = shopData.category.split(',').map(category => ({value: category, text: category}))
+            this.selectedPurposes = shopData.purpose.split(',').map(purpose => ({ value: purpose, text: purpose }))
+            this.selectedCategorys = shopData.category.split(',').map(category => ({ value: category, text: category }))
         })
     }
 }
 </script>
-<style scoped></style>
+<style scoped>
+.about_sectionES form{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.dropbox2{
+    width: 50%;
+    /* display: flex;
+    justify-content: center;
+    align-items: center;   */
+    border: 2px dashed #ccc;
+    padding: 10px;
+    background-color: #f9f9f9;
+    margin-bottom: 20px;
+}
+
+/* .pictures-box ul {
+    padding: 0;
+    list-style: none;
+} */
+
+/* .pictures-box ul li {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    margin-bottom: 10px;
+} */
+
+/* .pictures-box img {
+    width: 100px;
+    height: 100px;
+    object-fit: cover;
+    margin-bottom: 5px;
+} */
+
+.pictures-box button1,
+.pictures-box button {
+    background-color: #dc3545;
+    border: none;
+    padding: 5px;
+    margin-top: 5px;
+    cursor: pointer;
+    font-size: 0.8rem;
+}
+
+
+/* .flexbox {
+    display: flex;
+    flex-direction: column;
+} */
+
+.text input,
+.text textarea {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    margin-bottom: 10px;
+}
+
+/* การปรับสำหรับหน้าจอโทรศัพท์ */
+@media (max-width: 768px) {
+    .flexbox {
+        width: 100%;
+    }
+
+    .dropbox {
+        padding: 10px;
+        font-size: 0.9rem;
+    }
+
+    .pictures-box img {
+        width: 80px;
+        height: 80px;
+    }
+
+    .pictures-box button1,
+    .pictures-box button {
+        background-color: #dc3545;
+        border: none;
+        padding: 5px;
+        margin-top: 5px;
+        cursor: pointer;
+        font-size: 0.8rem;
+    }
+
+    .flexbox {
+        display: flex;
+        flex-direction: column;
+    }
+
+    .text input,
+    .text textarea {
+        width: 100%;
+        padding: 10px;
+        border: 1px solid #ccc;
+        border-radius: 5px;
+        margin-bottom: 10px;
+    }
+
+}
+</style>

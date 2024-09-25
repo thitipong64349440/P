@@ -1,60 +1,50 @@
 <template>
-    <div class="hero_area">
+    <div class="hero_area hero_area1">
         <div class="hero_bg_box">
             <div class="bg_img_box">
                 <img src="../assets/hero-bg.png" alt="">
             </div>
         </div>
         <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
-        <button1 v-on:click="navigateTo('/indexs/' + person.id)"><a><i class="bi bi-caret-left">กลับ</i></a></button1>
-        <div2 style="display:flex; align-items:center; justify-content:center;">
-            <div class="page">
-                <div class="form2">
-                    <span3>
-                        <h1>โพสความสินค้า</h1>
-                    </span3>
-                    <form enctype="multipart/form-data" class="register-form" v-on:submit.prevent="createSale"
-                        novalidate>
-                        <div class="dropbox">
-                            <input type="file" multiple :name="uploadFieldName" :disabled="isSaving"
-                                @change="filesChange($event.target.name, $event.target.files); fileCount = $event.target.files.length"
-                                accept="image/*" class="input-file">
-                            <p>
-                                Drag your file(s) here to begin<br> or click to browse
-                            </p>
-                        </div>
-                        <div class="pictures-box">
-                            <ul class="pictures">
-                                <li v-for="picture in pictures" v-bind:key="picture.id">
-                                    <img style="margin-bottom:5px;" :src="BASE_URL + picture.name" alt="picture image">
-                                    <button1 v-on:click="deletePicture(picture)">ลบ</button1>
-                                    <button v-on:click.prevent="useThumbnail(picture.name)">ตั้งรูปหน้าปก</button>
-                                </li>
-                            </ul>
-                        </div>
-                        <div class="screen-2">
-                            <input class="product" type="text" placeholder="ชื่อสินค้า *" v-model="shop.product_name"
-                                required>
-                            <input class="quantity" type="text" placeholder="จำนวน" v-model="shop.quantity">
-                            <Multiselect v-model="selectedPurposes" :options="purposeOptions" :multiple="true"
-                                :close-on-select="false" :clear-on-select="false" :preserve-search="true"
-                                :hide-selected="true"
-                                placeholder="เลือกจุดประสงค์" label="text" track-by="value" />
-                            <Multiselect v-model="selectedCategorys" :options="categoryOptions" :multiple="true"
-                                :close-on-select="false" :clear-on-select="false" :preserve-search="true"
-                                :hide-selected="true"
-                                placeholder="เลือกหมวดหมู่" label="text" track-by="value" />
-                            <input class="detail" type="text" placeholder="รายละเอียด" v-model="shop.detail">
-                            <input class="price" type="text" placeholder="ราคา" v-model="shop.price">
-                            <a type="text" v-bind="shop.shop_name = person.shop_name"></a>
-                            <div class="button-center">
-                                <button type="submit">โพส</button>
-                            </div>
-                        </div>
-                    </form>
+        <button1 class="BS" v-on:click="navigateTo('/indexs/' + person.id)"><a><i class="bi bi-caret-left">กลับ</i></a></button1>
+        <span3>
+            <h1 style="margin-bottom: 30px;">โพสความสินค้า</h1>
+        </span3>
+        <form enctype="multipart/form-data" class="register-form" v-on:submit.prevent="createSale" novalidate>
+            <div class="dropbox dropbox1">
+                <input type="file" multiple :name="uploadFieldName" :disabled="isSaving"
+                    @change="filesChange($event.target.name, $event.target.files); fileCount = $event.target.files.length"
+                    accept="image/*" class="input-file">
+                <p>
+                    Drag your file(s) here to begin<br> or click to browse
+                </p>
+            </div>
+            <div class="pictures-box pictures-box1">
+                <ul class="pictures pictures1">
+                    <li v-for="picture in pictures" v-bind:key="picture.id">
+                        <img style="margin-bottom:5px;" :src="BASE_URL + picture.name" alt="picture image">
+                        <button1 v-on:click="deletePicture(picture)">ลบ</button1>
+                        <button v-on:click.prevent="useThumbnail(picture.name)">ตั้งรูปหน้าปก</button>
+                    </li>
+                </ul>
+            </div>
+            <div class="screen-2">
+                <input class="product" type="text" placeholder="ชื่อสินค้า *" v-model="shop.product_name" required>
+                <input class="quantity" type="text" placeholder="จำนวน" v-model="shop.quantity">
+                <Multiselect v-model="selectedPurposes" :options="purposeOptions" :multiple="true"
+                    :close-on-select="false" :clear-on-select="false" :preserve-search="true" :hide-selected="true"
+                    placeholder="เลือกจุดประสงค์" label="text" track-by="value" />
+                <Multiselect v-model="selectedCategorys" :options="categoryOptions" :multiple="true"
+                    :close-on-select="false" :clear-on-select="false" :preserve-search="true" :hide-selected="true"
+                    placeholder="เลือกหมวดหมู่" label="text" track-by="value" />
+                <input class="detail" type="text" placeholder="รายละเอียด" v-model="shop.detail">
+                <input class="price" type="text" placeholder="ราคา" v-model="shop.price">
+                <a type="text" v-bind="shop.shop_name = person.shop_name"></a>
+                <div class="button-center">
+                    <button type="submit">โพส</button>
                 </div>
             </div>
-        </div2>
+        </form>
     </div>
 </template>
 <script>
@@ -246,23 +236,104 @@ export default {
 }
 </script>
 <style scoped>
+.hero_area1{
+    display: block;
+    display: flex;
+  justify-content: center;
+  align-items: center;  
+}
+.register-form {
+    align-items: center;
+    margin: 0;
+    width: 40%;
+}
+.hero_area1 button1{
+    align-self: start;
+}
+
 .multiselect {
-    width: 100%; /* Set width to fit the container */
-    margin-bottom: 10px; /* Space below the component */
+    width: 100%;
+    /* Set width to fit the container */
+    margin-bottom: 10px;
+    /* Space below the component */
 }
 
 .detail {
     width: 100%;
     height: auto;
-    margin-bottom: 10px; /* Space below the textarea */
+    margin-bottom: 10px;
+    /* Space below the textarea */
 }
 
 textarea {
-    resize: vertical; /* Allow resizing only vertically */
+    resize: vertical;
+    /* Allow resizing only vertically */
 }
 
 a {
-    display: block; /* Ensure the anchor is displayed properly */
-    margin-top: 10px; /* Add margin to separate it from other elements */
+    display: block;
+    /* Ensure the anchor is displayed properly */
+    margin-top: 10px;
+    /* Add margin to separate it from other elements */
+}
+
+/* Media Queries สำหรับหน้าจอโทรศัพท์ */
+@media (max-width: 767px) {
+    .hero_area1 {
+        height: 150vh;
+    }
+    .register-form{
+        background-color: #6c80f7;
+        width: 100%;
+    }
+
+    .product,
+    .quantity,
+    .detail,
+    .price {
+        width: 100%;
+        margin-bottom: 15px;
+    }
+
+    span3 h1 {
+        font-size: 1.5rem;
+    }
+
+    input,
+    .multiselect,
+    .dropbox1 {
+        width: 100%;
+        margin-bottom: 15px;
+        padding: 10px;
+        font-size: 1rem;
+        border: 1px solid #ccc;
+        border-radius: 5px;
+    }
+
+    .dropbox1 p {
+        text-align: center;
+        font-size: 1rem;
+        color: #666;
+    }
+
+    .pictures-box1 ul.pictures1 {
+        list-style: none;
+        padding: 0;
+    }
+
+    .pictures-box1 img {
+        max-width: 80px;
+        height: auto;
+        margin-right: 10px;
+    }
+
+    .pictures-box1 button1,
+    .pictures-box1 button {
+        font-size: 0.9rem;
+        padding: 5px 10px;
+        border: 1px solid #333;
+        background-color: #fff;
+        cursor: pointer;
+    }
 }
 </style>
