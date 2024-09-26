@@ -31,7 +31,7 @@
                             </div>
                         </div>
                         <div class="col-md-2 col-lg-2 ">
-                            <button
+                            <button style="box-shadow: 0 4px 20px 5px rgba(77, 255, 22, 0.5);border-bottom: 1px solid black;"
                                 v-on:click="navigateTo('/match/' + person.id + '/' + postC.id + '/' + shop.id)">จับคู่</button>
                         </div>
                         <div class="col-md-2 col-lg-0 ">

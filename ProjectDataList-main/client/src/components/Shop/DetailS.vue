@@ -1,5 +1,5 @@
 <template>
-    <div class="full about_section2">
+    <div class="full fullDS about_section2">
         <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
         <div v-if="person && person.type === 'shop'">
             <div>
@@ -104,8 +104,8 @@ export default {
 <style scoped>
 .full {
     /* width: 100vw; */
-    height: 100%;
-    background-color: #00204a;
+    /* height: 100%;
+    background-color: #00204a; */
 }
 
 .full span2 {

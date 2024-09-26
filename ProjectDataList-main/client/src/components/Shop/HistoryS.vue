@@ -24,7 +24,7 @@
                     <a1>{{ shop.price }}</a1>
                 </div>
                 <div class="col-md-2 col-lg-8" v-if="shop.company_name != null">
-                    <button class="bg-danger" v-on:click="navigateTo('/result/' + person.id + '/' + shop.id)">ดูข้อมูล
+                    <button style="box-shadow: 0 4px 20px 5px rgba(77, 255, 22, 0.5);border-bottom: 1px solid black;" class="bg-danger" v-on:click="navigateTo('/result/' + person.id + '/' + shop.id)">ดูข้อมูล
                     </button>
                     <div style="margin-top: 30px;" v-if="hasMatchingMessage(shop)">
                         <button class="bg-danger"
@@ -36,7 +36,7 @@
             <div class="button_shop">
                 <button v-on:click="navigateTo('/shop/edit/' + person.id + '/' + shop.id)">แก้ไขข้อมูล</button>
                 <button v-on:click="navigateTo('/shop/detail/' + person.id + '/' + shop.id)">ดูรายละเอียด</button>
-                <button v-on:click="deletePost_Company(shop)">ลบข้อมูล</button>
+                <button style="box-shadow: 0 4px 20px 5px rgba(250, 41, 41, 0.5); border-bottom: 1px solid black;" v-on:click="deletePost_Company(shop)">ลบข้อมูล</button>
             </div>
             <hr>
             <hr>

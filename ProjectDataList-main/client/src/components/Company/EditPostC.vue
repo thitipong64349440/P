@@ -231,7 +231,6 @@ textarea,
 .multiselect1 {
     width: 100%;
     margin-top: 5px;
-    /* padding: 10px; */
     border-radius: 5px;
     border: 1px solid #ccc;
 }

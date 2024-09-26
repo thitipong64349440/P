@@ -1,5 +1,5 @@
 <template>
-    <div class="about_section layout_padding5">
+    <div class="about_section about_sectionHC layout_padding5">
         <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
         <button1 v-on:click="navigateTo('/indexs/' + person.id)"><a><i class="bi bi-caret-left">กลับ</i></a></button1>
         <h1>
@@ -68,10 +68,10 @@
                                     v-on:click="navigateTo('/postC/edit/' + person.id + '/' + postC.id)">แก้ไขข้อมูล</button>
                             </div>
                             <div class="sa">
-                                <button style="padding: 10px 20px 10px 20px;" v-on:click="deletePost_Company(postC)">ลบข้อมูล</button>
+                                <button style="padding: 10px 20px 10px 20px; box-shadow: 0 4px 20px 5px rgba(250, 41, 41, 0.5);border-bottom: 1px solid black;" v-on:click="deletePost_Company(postC)">ลบข้อมูล</button>
                             </div>
                             <div class="su" v-if="postC.shop_name != null">
-                                <button
+                                <button style="box-shadow: 0 4px 20px 5px rgba(77, 255, 22, 0.5);border-bottom: 1px solid black;"
                                     v-on:click="navigateTo('/results/' + person.id + '/' + postC.id)">ดูข้อมูล
                                 </button>
                                 <div class="si" v-if="hasMatchingMessage(postC)">
@@ -155,4 +155,20 @@ export default {
 .si{
     margin: 10px;
 }
+
+/* สำหรับหน้าจอขนาดเล็ก */
+@media (max-width: 768px) {
+    .su, .si {
+        display: flex;
+        flex-direction: column; 
+        align-items: center;
+        width: 100%; 
+    }
+
+    .su button, .si button4 {
+        font-size: 1rem; 
+        padding: 12px;
+    }
+}
+
 </style>

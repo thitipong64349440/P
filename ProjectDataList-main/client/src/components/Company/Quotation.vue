@@ -1,5 +1,5 @@
 <template>
-    <div class="full">
+    <div class="full QC">
         <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
         <div>
             <button1 v-on:click="navigateTo('/results/' + person.id + '/' + postC.id)"><a><i
@@ -9,7 +9,7 @@
         <h1>
             <span2>ใบเสนอราคา</span2>
         </h1>
-        <div class="quotation" id="quotation">
+        <div class="quotation qc" id="quotation">
             <form v-on:submit.prevent="createQuotation">
                 <div class="header">
                     <div class="store-name">{{ postC.shop_name }}</div>
@@ -66,23 +66,23 @@
                     </div>
                     <div class=""></div>
                 </div>
-                <a type="text" v-bind="quatation.company_name = person.company_name"></a>
-                <a type="text" v-bind="quatation.product_name = shop.product_name"></a>
-                <a type="text" v-bind="quatation.quantity = shop.quantity"></a>
-                <a type="text" v-bind="quatation.shop_name = shop.shop_name"></a>
-                <a type="text" v-bind="quatation.address = person.address"></a>
-                <a type="text" v-bind="quatation.price = shop.price"></a>
-                <a type="text" v-bind="quatation.name = person.name"></a>
-                <a type="text" v-bind="quatation.company_Id = postC.id"></a>
-                <a type="text" v-bind="quatation.shop_Id = shop.id"></a>
+                <div class="not">
+                <div v-bind="quatation.company_name = person.company_name"></div>
+                <div v-bind="quatation.product_name = shop.product_name"></div>
+                <div v-bind="quatation.quantity = shop.quantity"></div>
+                <div v-bind="quatation.shop_name = shop.shop_name"></div>
+                <div v-bind="quatation.address = person.address"></div>
+                <div v-bind="quatation.price = shop.price"></div>
+                <div v-bind="quatation.name = person.name"></div>
+                <div v-bind="quatation.company_Id = postC.id"></div>
+                <div v-bind="quatation.shop_Id = shop.id"></div>
+                </div>
                 <div class="button-center">
                     <button style="margin-top: 90%; margin-bottom: 50px;" type="submit" @click="downloadPDF()"><i
                             class="bi bi-download"></i>Download</button>
                 </div>
             </form>
         </div>
-
-
     </div>
 </template>
 <script>
@@ -214,7 +214,6 @@ export default {
 .full {
     width: 100vw;
     height: 100vh;
-    /* background-color: #00204a; */
 }
 
 .full span2 {
@@ -303,9 +302,71 @@ export default {
     margin-top: 15px;
 }
 
-/* จัดเตรียมให้พิมพ์เต็มหน้า A4 */
+/* การปรับแต่งสำหรับหน้าจอโทรศัพท์ (ต่ำกว่า 768px) */
+@media (max-width: 768px) {
+    .quotation .not:not(:first-child) .button-center:not(:first-child) {
+        padding: 20px;
+        background-color: #fdfde0;
+        width: 100%;
+        box-sizing: border-box;
+    }
+    .qc .store-name, .title{
+        margin-left: -50%;
+    }
+
+    .info-section {
+        flex-direction: column;
+    }
+    .qc .quotation-table {
+    width: 50%;
+        }
+
+    .quotation-table th,
+    .quotation-table td {
+        font-size: 0.8rem;
+        padding: 8px;
+        padding: 10px;
+        text-align: center;
+        font-size: 0.9rem;
+    }
+
+    .title {
+        font-size: 1.1rem;
+        margin-top: 10px;
+    }
+
+    .underline {
+        padding: 5px 0;
+        font-size: 0.9rem;
+    }
+
+    .quotation-table th {
+        font-weight: bold;
+    }
+
+    .footer {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        margin-top: 20px;
+        margin-left: -50%;
+    }
+
+    .footer-item {
+        margin-bottom: 15px;
+        font-size: 0.9rem;
+    }
+
+    .QC {
+        background-color: #ffffff;
+    }
+    .button-center {
+        width: 50%;
+    }
+}
+
 @media print {
-    .quotation {
+    .quotation{
         margin: 0;
         box-shadow: none;
     }

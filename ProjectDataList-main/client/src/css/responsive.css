@@ -1,11 +1,16 @@
 @media (min-width: 1366px) {
- .about_section2{
-  height: 100vh;
- }
+  .about_section2 {
+    height: 100vh;
+  }
+  .about_sectionHC {
+    height: 100vh;
+  }
+  .fullDS{
+    height: 100vh;
+  }
 }
 
-@media (max-width: 1120px) {
-}
+@media (max-width: 1120px) {}
 
 @media (max-width: 992px) {
   .hero_area {
@@ -43,7 +48,8 @@
   nav ul li a {
     font-size: 16px;
   }
-  .content_content{
+
+  .content_content {
     margin-left: 50px;
   }
 }
@@ -74,6 +80,7 @@
     justify-content: center;
     align-items: center;
   }
+
   .service_section_h {
     margin-top: -200px;
   }
@@ -121,9 +128,7 @@
 
   form {
     border-radius: 10px;
-    /* box-shadow: 0 0 15px rgba(0, 0, 0, 0.5); */
     width: 100%;
-    max-width: 400px;
   }
 
   form input {
@@ -142,11 +147,11 @@
   /***************************************************end Sigup************************************************************************** */
 
   /***************************************************Index************************************************************************** */
-  .service_section .box .img-box{
+  .service_section .box .img-box {
     align-items: center;
     display: flex;
     flex-direction: column;
-    margin: 20px auto 0; 
+    margin: 20px auto 0;
     height: 100%;
   }
 
@@ -481,11 +486,12 @@
     flex-direction: row;
     justify-content: space-between;
     max-width: 800px;
-}
-.item_item {
+  }
+
+  .item_item {
     flex: 0 0 45%;
     /* แบ่งความกว้างของ item */
-}
+  }
 
   /***************************************************end Match************************************************************************** */
 
@@ -498,6 +504,9 @@
   }
 
   /***************************************************end DetailS************************************************************************** */
+  .about_section span2{
+    margin: 0;
+  }
 }
 
 @media (max-width: 768px) {

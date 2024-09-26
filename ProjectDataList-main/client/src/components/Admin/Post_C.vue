@@ -63,9 +63,8 @@
                                     </div>
                                 </div>
                             </div>
-
                             <div class="su" v-if="postC.shop_name == null">
-                                <button v-on:click="navigateTo('/shops/' + person.id + '/' + postC.id)">จับคู่</button>
+                                <button  v-on:click="navigateTo('/shops/' + person.id + '/' + postC.id)">จับคู่</button>
                             </div>
                             <div class="sa">
                                 <button v-on:click="deletePost_Company(postC)">ลบข้อมูล</button>
@@ -73,7 +72,7 @@
                             <div v-for="quatation in quatations" v-bind:key="quatation.id">
                                 <div class="su" v-if="postC.id == quatation.company_Id">
                                     <button
-                                        v-on:click="navigateTo('/quotationA/' + person.id + '/' + postC.id + '/' + quatation.id)">ใบเสนอราคา</button>
+                                        v-on:click="navigateTo('/quotationS/' + person.id + '/' + shop.id + '/' + quatation.id)">ใบเสนอราคา</button>
                                 </div>
                             </div>
                         </div>
@@ -88,6 +87,7 @@
 <script>
 import PostCService from '@/services/PostCService'
 import PersonService from '@/services/PersonService'
+import ShopService from '@/services/ShopService'
 import QuatationService from '@/services/QuatationService'
 export default {
     data() {
@@ -104,6 +104,7 @@ export default {
                 tel: '',
                 type: ''
             },
+            shop: [],
             quatations: [],
         }
     },
@@ -112,6 +113,7 @@ export default {
         let personId = this.$route.params.personId
         this.person = (await PersonService.show(personId)).data
         this.postCs = (await PostCService.index()).data
+        this.shops = (await ShopService.index()).data
         this.quatations = (await QuatationService.index()).data
     },
     methods: {
@@ -155,4 +157,15 @@ export default {
     }
 }
 </script>
-<style scoped></style>
+<style scoped>
+.su button {
+    box-shadow: 0 4px 20px 5px rgba(77, 255, 22, 0.5);
+    border-bottom: 1px solid black;
+}
+.sa button{
+    box-shadow: 0 4px 20px 5px rgba(250, 41, 41, 0.5);
+    border-bottom: 1px solid black;
+
+}
+
+</style>

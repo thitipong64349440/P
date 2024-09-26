@@ -28,7 +28,7 @@
             </div>
             <div class="button_shop">
                 <button v-on:click="navigateTo('/shop/detail/' + person.id + '/' + shop.id)">ดูรายละเอียด</button>
-                <button v-on:click="deleteShop(shop)">ลบข้อมูล</button>
+                <button class="de" v-on:click="deleteShop(shop)">ลบข้อมูล</button>
             </div>
             <hr>
             <hr>
@@ -101,4 +101,9 @@ export default {
     }
 }
 </script>
-<style scoped></style>
+<style scoped>
+.button_shop .de{
+    box-shadow: 0 4px 20px 5px rgba(250, 41, 41, 0.5);
+    border-bottom: 1px solid black;
+}
+</style>

@@ -1,5 +1,5 @@
 <template>
-    <div class="hero_area">
+    <div class="hero_area hero_areaRS">
         <div class="hero_bg_box">
             <div class="bg_img_box">
                 <img src="../assets/hero-bg.png" alt="">
@@ -12,37 +12,27 @@
         </h1>
         <div v-if="person && person.type === 'shop'">
             <div v-for="postC in postCs" v-bind:key="postC.id" v-if="shop.id === postC.shop_Id">
-                <div class="flexbox">
-                    <div class="item3">
-                        <div class="content3">
+                <div class="flexboxRS">
+                    <div class="itemRS">
                             <a1>{{ postC.company_name }}</a1>
-                            <div class="text">
-                                <div style="display: flex; justify-content: flex-start;margin-top: 10px;">
-                                    <a style="margin-right: 25px; margin-left: 40%;">ชื่อสินค้า:</a>
-                                    <a style="flex: 1; margin-top: 0; height: 35px;">{{ postC.product_name }}</a>
-                                </div>
-                                <div style="display: flex; justify-content: flex-start;margin-top: 10px;">
-                                    <a style="margin-right: 25px; margin-left: 38%;">จุดประสงค์:</a>
-                                    <a style="flex: 1; margin-top: 0; height: 35px;">{{ postC.purpose }}</a>
-                                </div>
-                                <div style="display: flex; justify-content: flex-start;margin-top: 10px;">
-                                    <a style="margin-right: 25px; margin-left: 41%;">ประเภท:</a>
-                                    <a style="flex: 1; margin-top: 0; height: 35px;">{{ postC.category }}</a>
-                                </div>
-                                <div style="display: flex; justify-content: flex-start;margin-top: 10px;">
-                                    <a style="margin-right: 25px; margin-left: 41.8%;">จำนวน:</a>
-                                    <a style="flex: 1; margin-top: 0; height: 35px;">{{ postC.quantity }}</a>
-                                </div>
-                                <div style="display: flex; justify-content: flex-start;margin-top: 10px;">
-                                    <a style="margin-right: 25px; margin-left: 37.1%;">รายละเอียด:</a>
-                                    <a style="flex: 1; margin-top: 0; height: 35px;">{{ postC.detail }}</a>
-                                </div>
+                            <div class="textRS" >
+                                <a >ชื่อสินค้า:</a>
+                                <span>{{ postC.product_name }}</span>
+                                <a>จุดประสงค์:</a>
+                                <span>{{ postC.purpose }}</span>
+                                <a>ประเภท:</a>
+                                <span>{{ postC.category }}</span>
+                                <a>จำนวน:</a>
+                                <span>{{ postC.quantity }}</span><br>
+                                <a>รายละเอียด:</a>
+                                <span>{{ postC.detail }}</span>
                             </div>
-                        </div>
                     </div>
                 </div>
-                <div class="button-center" v-for="quatation in quatations" v-bind:key="quatation.id" v-if="shop.id == quatation.shop_Id">
-                    <button v-on:click="navigateTo('/quotationS/' + person.id + '/' + shop.id + '/' + quatation.id)">สั่งซื้อ</button>
+                <div class="button-center RS" v-for="quatation in quatations" v-bind:key="quatation.id"
+                    v-if="shop.id == quatation.shop_Id">
+                    <button
+                        v-on:click="navigateTo('/quotationS/' + person.id + '/' + shop.id + '/' + quatation.id)">สั่งซื้อ</button>
                 </div>
                 <div v-if="!isSend">
                     <form class="message" v-on:submit.prevent="createMessage">
@@ -66,8 +56,6 @@
                 </div>
             </div>
         </div>
-        <p></p>
-        <hr>
     </div>
 </template>
 <script>
@@ -109,7 +97,7 @@ export default {
                 personId: '',
                 type: ''
             },
-            quatations:[], 
+            quatations: [],
             isSend: false
         }
     },
@@ -149,9 +137,6 @@ export default {
             this.message.type = this.person.type
             try {
                 await MessageService.post(this.message)
-                // this.$router.push({
-                //     path: '/indexs/' + this.person.id
-                // })
             } catch (err) {
                 console.log(err)
             }
@@ -176,16 +161,88 @@ export default {
             }
         }
     },
-    // computed: {
-    //     showButton() {
-    //         return store.state.showButton
-    //     }
-    // },
-
-
     catch(error) {
         console.log(error)
     }
 }
 </script>
-<style scoped></style>
+<style>
+.hero_areaRS h1 {
+    margin-bottom: 30px;
+}
+
+.hero_areaRS .message {
+    width: 40%;
+    margin: 0 auto;
+}
+.message {
+    padding: 20px;
+    background-color: #fff;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    margin-bottom: 20px;
+}
+
+.message_box textarea {
+    width: 100%;
+    padding: 10px;
+    font-size: 1rem;
+}
+
+.flexboxRS {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 20px;
+    margin: 0 auto;
+    width: 40%;
+}
+
+.itemRS {
+    margin-bottom: 19px;
+    width: 100%;
+    padding: 15px;
+    background-color: #f9f9f9;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
+}
+
+.textRS {
+    background-color: #ffffff;
+    font-weight: 600;
+    padding: 10px;
+    border-radius: 20px 20px 20px 20px;
+    color: #242424;
+    margin-top: 10px;
+}
+
+.textRS a {
+    display: block;
+    margin-bottom: 10px;
+    font-size: 1rem;
+    color: #333;
+}
+.textRS span{
+    font-size: 0.8rem;
+}
+
+.hr1 {
+    border-top: 1px solid #ddd;
+    margin: 20px 0;
+}
+
+.message_text h3 {
+    text-align: center;
+    color: green;
+}
+@media (max-width: 768px) {
+    .RS button{
+        width: 50%;
+    }
+    .hero_areaRS span2 {
+        margin: 0 auto;
+    }
+
+}
+</style>

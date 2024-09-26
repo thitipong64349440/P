@@ -1,5 +1,5 @@
 <template>
-  <div class="hero_area">
+  <div class="hero_area hero_areaSU">
     <div class="hero_bg_box">
       <div class="bg_img_box">
         <img src="../assets/hero-bg.png" alt="">
@@ -9,8 +9,7 @@
       <span>
         Delcom
       </span>
-    </a>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <div class="topnav" id="myTopnav">
       <a style="color: aliceblue;" v-on:click="navigateTo('/')">Home</a>
       <a style="color: aliceblue;" v-on:click="navigateTo('/login')">Login</a>
@@ -19,6 +18,7 @@
         <i class="fa fa-bars"></i>
       </a>
     </div>
+    </a>
     <div class="about_section layout_padding">
       <div class="heading_container heading_center">
         <h1>
@@ -26,7 +26,6 @@
         </h1>
       </div>
       <div2 style="display:flex; align-items:center; justify-content:center;">
-        <div>
           <form v-on:submit.prevent="create">
             <div class="screen-1">
               <input class="name" type="text" placeholder="name" v-model="person.name">
@@ -108,7 +107,6 @@
               </div>
             </div>
           </form>
-        </div>
       </div2>
     </div>
   </div>
@@ -168,5 +166,4 @@ export default {
     box-shadow: 0 0 15px rgba(0, 0, 0, 0.5);
   }
 }
-
 </style>

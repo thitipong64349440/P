@@ -517,7 +517,7 @@ span3{
   justify-content: center;
   align-items: stretch;
   box-sizing: border-box;
-  margin: 35px -20px;
+  /* margin: 35px -20px; */
 }
 
 .item {
@@ -571,7 +571,6 @@ span3{
   height: 100%;
   padding: 10px;
   border-radius: 20px 20px 20px 20px;
-  margin-left: 10px;
 }
 .content4 {
   color: #242424;
@@ -587,7 +586,6 @@ span3{
   overflow-wrap: break-word;
 }
 .content3 a1{
-  font-size: 2em;
   margin-left: 20px;
   text-shadow: 4px 3px 4px rgba(0, 59, 235, 0.82);
 }

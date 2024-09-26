@@ -1,8 +1,16 @@
 <template>
-    <div class="full">
+    <div class="full QC">
         <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+            <!-- <button1 v-on:click="navigateTo('/result/' + person.id + '/' + shop.id)"><a><i
+                        class="bi bi-caret-left">กลับ</i></a></button1> -->
+                        <div v-if="person && person.type === 'shop'">
             <button1 v-on:click="navigateTo('/result/' + person.id + '/' + shop.id)"><a><i
                         class="bi bi-caret-left">กลับ</i></a></button1>
+        </div>
+        <div v-else>
+            <button1 v-on:click="navigateTo('/postCs/' + person.id)"><a><i class="bi bi-caret-left">กลับ</i></a>
+            </button1>
+        </div>
         <h1>
             <span2>ใบเสนอราคา</span2>
         </h1>
@@ -21,7 +29,6 @@
                     <div class="info-item">
                         <label>ที่อยู่หน่วยงาน</label>
                         <div class="underline">{{ quatation.address }}</div>
-                        <!-- <div class="underline"></div> -->
                     </div>
                 </div>
                 <div class="right">
@@ -257,6 +264,46 @@ export default {
     display: block;
     border-bottom: 1px solid black;
     margin-top: 15px;
+}
+
+@media (max-width: 768px) {
+    .quotation {
+        padding: 20px;
+        background-color: #fdfde0;
+        width: 100%;
+        box-sizing: border-box;
+    }
+
+    .quotation-table th,
+    .quotation-table td {
+        font-size: 0.8rem;
+        padding: 8px;
+        padding: 10px;
+        text-align: center;
+        font-size: 0.9rem;
+    }
+
+    .title {
+        font-size: 1.1rem;
+        margin-top: 10px;
+    }
+
+    .underline {
+        padding: 5px 0;
+        font-size: 0.9rem;
+    }
+
+    .quotation-table th {
+        font-weight: bold;
+    }
+
+    .footer-item {
+        margin-bottom: 15px;
+        font-size: 0.9rem;
+    }
+    .QC{
+        background-color: #ffffff;
+    }
 }
 
 /* จัดเตรียมให้พิมพ์เต็มหน้า A4 */

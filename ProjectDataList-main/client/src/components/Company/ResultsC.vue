@@ -17,44 +17,53 @@
                         </div>
                     </div>
                 </div>
-                <div class="text_detail">
+                <div class="text_detail text_detailRC">
                     <a>ชื่อสินค้า:</a>
-                    <a1>{{ shop.product_name }}</a1><br><p></p>
+                    <a1>{{ shop.product_name }}</a1><br>
+                    <p></p>
                     <a>จุดประสงค์:</a>
-                    <a1>{{ shop.purpose }}</a1><br><p></p>
+                    <a1>{{ shop.purpose }}</a1><br>
+                    <p></p>
                     <a>ประเภท:</a>
-                    <a1>{{ shop.category }}</a1><br><p></p>
+                    <a1>{{ shop.category }}</a1><br>
+                    <p></p>
                     <a>รายละเอียด:</a>
-                    <a1>{{ shop.detail }}</a1><br><p></p>
+                    <a1>{{ shop.detail }}</a1><br>
+                    <p></p>
                     <a>จำนวน:</a>
-                    <a1>{{ shop.quantity }}</a1><br><p></p>
+                    <a1>{{ shop.quantity }}</a1><br>
+                    <p></p>
                     <a>ราคา:</a>
                     <a1>{{ shop.price }}</a1>
                     <p></p>
                     <div class="button-center">
-                        <button @click="goToQuotation(shop)">สั่งซื้อ</button>
-                        <button @click="deleteMatch(postC, shop)">ไม่สนใจ</button>
+                        <button style="box-shadow: 0 4px 20px 5px rgba(77, 255, 22, 0.5);border-bottom: 1px solid black;" @click="goToQuotation(shop)">สั่งซื้อ</button>
+                        <button style="margin-left: 20px; box-shadow: 0 4px 20px 5px rgba(250, 41, 41, 0.5);border-bottom: 1px solid black;" @click="deleteMatch(postC, shop)">ไม่สนใจ</button>
                     </div>
                 </div>
-                <div v-if="!isSend">
-                    <form class="message" v-on:submit.prevent="createMessage">
+                <!-- <div v-if="!isSend"> -->
+                <div class="RC">
+                    <br>
+                    <form v-if="!isSend" class="messageRC" v-on:submit.prevent="createMessage">
                         <h2>{{ postC.shop_name }}</h2>
                         <a type="text" v-bind="message.shop_name = shop.shop_name"></a>
                         <a type="text" v-bind="message.shopId = shop.id"></a>
                         <div class="hr1"></div>
-                        <div class="message_box">
+                        <div class="messageRC_box">
                             <textarea v-model="message.comment" placeholder="ข้อความ"></textarea>
                         </div>
                         <button type="submit">ส่ง</button>
                     </form>
-                </div>
-                <div class="message" v-else>
-                    <h2>{{ postC.shop_name }}</h2>
-                    <div class="hr1"></div>
-                    <div class="message_text">
-                    <h3>ส่งข้อความสําเร็จ</h3>
+                    <!-- </div> -->
+                    <div class=" messageRC" v-else>
+                        <h2>{{ postC.shop_name }}</h2>
+                        <div class="hr1"></div>
+                        <div class="messageRC_text">
+                            <h3>ส่งข้อความสําเร็จ</h3>
+                        </div>
+                        <button @click="resetMessage">ส่งใหม่</button>
                     </div>
-                    <button @click="resetMessage">ส่งใหม่</button>
+                    <br>
                 </div>
             </div>
         </div>
@@ -182,11 +191,81 @@ export default {
 <style scoped>
 .full {
     width: 100vw;
-    height: 160vh;
+    height: 170vh;
     background-color: #00204a;
 }
 
 .full span2 {
     color: #ffffff;
+}
+
+.text_detailRC a1 {
+    font-weight: normal;
+    display: block;
+    margin-bottom: 10px;
+    color: #f9fc44;
+}
+
+/* กล่องข้อความ */
+/* .message {
+    margin-top: 20px;
+} */
+
+/* .message_box {
+    margin: 10px 0;
+} */
+
+.messageRC_text h3 {
+    color: green;
+    text-align: center;
+}
+
+.messageRC {
+    background-color: #fff;
+    align-items: center;
+    justify-content: center;
+    display: flex;
+    flex-direction: column;
+    margin: 0 auto;
+    width: 40%;
+    padding: 20px 0px 50px 0px;
+}
+
+.messageRC_box {
+    margin-top: 20px;
+}
+
+.messageRC_box textarea {
+    width: 500px;
+    height: 150px;
+    border-radius: 10px;
+}
+
+.messageRC_text {
+    margin-top: 50px;
+    margin-bottom: 50px;
+}
+
+@media (max-width: 768px) {
+
+    .text_detailRC {
+        padding: 10px;
+        background-color: #033f77;
+    }
+
+    .messageRC {
+        width: 90%;
+        margin-bottom: 20px;
+    }
+    .RC{
+        background-color: #00204a;
+    }
+
+    .messageRC_box textarea {
+        width: 100%;
+    }
+    .messageRC button{
+        width: 50%;
+    }
 }
 </style>
