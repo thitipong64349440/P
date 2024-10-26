@@ -9,79 +9,6 @@
         <h1>
             <span2>ใบเสนอราคา</span2>
         </h1>
-        <!-- <div class="quotation qc" id="quotation"> -->
-        <!-- <form v-on:submit.prevent="createQuotation"> -->
-        <!-- <div class="header">
-                    <div class="store-name">{{ postC.shop_name }}</div>
-                    <div class="title">ใบเสนอราคา (Quotation)</div>
-                </div>
-
-                <div class="info-section">
-                    <div class="left">
-                        <div class="info-item">
-                            <label>ชื่อหน่วยงาน</label>
-                            <div class="underline">{{ person.company_name }}</div>
-                        </div>
-                        <div class="info-item">
-                            <label>ที่อยู่หน่วยงาน</label>
-                            <div class="underline">{{ person.address }}</div>
-                        </div>
-                    </div>
-                    <div class="right">
-                        <div class="info-item">
-                            <label>เลขที่ใบเสนอราคา</label>
-                            <div class="underline"> {{ quatation.quotation_id }}</div>
-                        </div>
-                        <div class="info-item">
-                            <label>วันที่</label>
-                            <div class="underline">{{ currentDate }}</div>
-                        </div>
-                    </div>
-                </div>
-
-                <table class="quotation-table">
-                    <thead>
-                        <tr>
-                            <th>ลำดับที่</th>
-                            <th>รายละเอียดสินค้า</th>
-                            <th>จำนวน</th>
-                            <th>ราคา</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <tr>
-                            <td style="text-align: end;">1</td>
-                            <td style="text-align: start;">{{ shop.product_name }}</td>
-                            <td>{{ shop.quantity }}</td>
-                            <td>{{ shop.price }}</td>
-                        </tr>
-                    </tbody>
-                </table>
-
-                <div class="footer">
-                    <div class="footer-item">สั่งซื้อโดย<p style="color: black;">{{ person.name }}</p>
-                    </div>
-                    <div class="footer-item">เสนอโดย<p style="color: black;">{{ postC.shop_name }}</p>
-                    </div>
-                    <div class=""></div>
-                </div> -->
-        <!-- <div class="not">
-                <div v-bind="quatation.company_name = person.company_name"></div>
-                <div v-bind="quatation.product_name = shop.product_name"></div>
-                <div v-bind="quatation.quantity = shop.quantity"></div>
-                <div v-bind="quatation.shop_name = shop.shop_name"></div>
-                <div v-bind="quatation.address = person.address"></div>
-                <div v-bind="quatation.price = shop.price"></div>
-                <div v-bind="quatation.name = person.name"></div>
-                <div v-bind="quatation.company_Id = postC.id"></div>
-                <div v-bind="quatation.shop_Id = shop.id"></div>
-                </div> -->
-        <!-- <div class="button-center">
-            <button style="margin-top: 90%; margin-bottom: 50px;" type="submit" @click="downloadPDF()"><i
-                    class="bi bi-download"></i>Download</button>
-        </div> -->
-        <!-- </form> -->
-        <!-- </div> -->
         <div class="quotation" id="quotation">
             <form v-on:submit.prevent="createQuotation">
                 <div class="header">
@@ -148,8 +75,6 @@
                     <div class="summary">
                         <div class="summary-row"><span>รวมเป็นเงิน:</span><span>{{ totalPrice.toLocaleString() }}</span>
                         </div>
-                        <!-- <div class="summary-row"><span>หักส่วนลดพิเศษ:</span><span>0.00</span></div> -->
-                        <!-- <div class="summary-row"><span>ยอดรวมหลังหักส่วนลด:</span><span>35,000.00</span></div> -->
                         <div class="summary-row"><span>จำนวนภาษีมูลค่าเพิ่ม 7%:</span><span>{{
                             vatAmount.toLocaleString()
                                 }}</span></div>
@@ -199,8 +124,6 @@ export default {
     data() {
         return {
             BASE_URL: "http://localhost:8081/assets/uploads/",
-            // taxId: '',
-            // previousNumber: '',
             postC: {
                 id: '',
                 product_name: '',
@@ -374,149 +297,6 @@ export default {
 .full span2 {
     color: #000000;
 }
-
-/* .quotation {
-    width: 210mm;
-    height: 297mm;
-    margin: 0 auto;
-    padding: 20px;
-    font-family: 'Arial', sans-serif;
-    background-color: #fdfde0;
-    box-sizing: border-box;
-}
-
-.header {
-    text-align: center;
-    margin-bottom: 20px;
-}
-
-.store-name {
-    font-size: 20px;
-    font-weight: bold;
-}
-
-.title {
-    font-size: 24px;
-    margin-top: 5px;
-}
-
-.info-section {
-    display: flex;
-    justify-content: space-between;
-    margin-bottom: 20px;
-}
-
-.left,
-.right {
-    width: 45%;
-}
-
-.info-item {
-    margin-bottom: 15px;
-}
-
-.info-item label {
-    display: block;
-    font-size: 16px;
-    margin-bottom: 5px;
-}
-
-.underline {
-    border-bottom: 1px solid black;
-    width: 100%;
-}
-
-.quotation-table {
-    width: 100%;
-    border-collapse: collapse;
-    margin-bottom: 20px;
-}
-
-.quotation-table th,
-.quotation-table td {
-    border: 1px solid black;
-    padding: 10px;
-    text-align: center;
-}
-
-.footer {
-    display: flex;
-    justify-content: space-between;
-}
-
-.footer-item {
-    width: 30%;
-    text-align: center;
-}
-
-.footer-item::after {
-    content: '';
-    display: block;
-    border-bottom: 1px solid black;
-    margin-top: 15px;
-}
-
-@media (max-width: 768px) {
-    .quotation .not:not(:first-child) .button-center:not(:first-child) {
-        padding: 20px;
-        background-color: #fdfde0;
-        width: 100%;
-        box-sizing: border-box;
-    }
-    .qc .store-name, .title{
-        margin-left: -50%;
-    }
-
-    .info-section {
-        flex-direction: column;
-    }
-    .qc .quotation-table {
-    width: 50%;
-        }
-
-    .quotation-table th,
-    .quotation-table td {
-        font-size: 0.8rem;
-        padding: 8px;
-        padding: 10px;
-        text-align: center;
-        font-size: 0.9rem;
-    }
-
-    .title {
-        font-size: 1.1rem;
-        margin-top: 10px;
-    }
-
-    .underline {
-        padding: 5px 0;
-        font-size: 0.9rem;
-    }
-
-    .quotation-table th {
-        font-weight: bold;
-    }
-
-    .footer {
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        margin-top: 20px;
-        margin-left: -50%;
-    }
-
-    .footer-item {
-        margin-bottom: 15px;
-        font-size: 0.9rem;
-    }
-
-    .QC {
-        background-color: #ffffff;
-    }
-    .button-center {
-        width: 50%;
-    }
-} */
 .quotation {
     width: 794px;
     height: 1123px;
