@@ -1,0 +1,631 @@
+@media (min-width: 1366px) {
+  .about_section2 {
+    height: 100%;
+  }
+  .about_sectionHC {
+    height: 100%;
+  }
+  .fullDS{
+    height: 100%;
+  }
+  .fullRC {
+    height: 100%;
+  }
+}
+
+@media (max-width: 1120px) {}
+
+@media (max-width: 992px) {
+  .hero_area {
+    min-height: auto;
+  }
+
+  .ggg {
+    margin-top: 30px;
+  }
+
+  .hero_area {
+    background-color: #00204a;
+    height: 150vh;
+    background: linear-gradient(130deg, #231a6f, #0f054c);
+  }
+
+  .hero_area .hero_bg_box {
+    display: none;
+  }
+
+  .slider_section {
+    padding: 45px 0 75px 0;
+  }
+
+  .custom_nav-container .navbar-nav {
+    padding-top: 15px;
+    align-items: center;
+  }
+
+  .custom_nav-container .navbar-nav .nav-item .nav-link {
+    padding: 5px 25px;
+    margin: 5px 0;
+  }
+
+  nav ul li a {
+    font-size: 16px;
+  }
+
+  .content_content {
+    margin-left: 50px;
+  }
+}
+
+@media (max-width: 768px) {
+  .about_section .img-box {
+    margin-bottom: 45px;
+  }
+
+  /*****************************************************Home************************************************************************** */
+  .topnav a:not(:first-child) {
+    display: none;
+  }
+
+  .topnav a.icon {
+    float: right;
+    display: block;
+  }
+
+  .col-md-6 .img-box img {
+    width: 50%;
+    margin-top: -40px;
+
+  }
+
+  .img-box {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .service_section_h {
+    margin-top: -200px;
+  }
+
+  /***************************************************end Home************************************************************************** */
+
+  /***************************************************Login************************************************************************** */
+  .hero_area {
+    background-color: #00204a;
+    height: 140vh;
+  }
+
+  /***************************************************end Login************************************************************************** */
+
+  /***************************************************Sigup************************************************************************** */
+  form {
+    width: 60%;
+  }
+
+  .heading_container h1 {
+    font-size: 3rem;
+  }
+
+  form input,
+  form button {
+    width: 70%;
+  }
+
+  .heading_container h1 {
+    font-size: 2.2rem;
+  }
+
+  .card-3d-wrapper {
+    transition: transform 0.8s ease-in-out;
+  }
+
+  .checkbox {
+    margin-top: 20px;
+  }
+
+  .form-style {
+    margin: 10px 0;
+    border: none;
+  }
+
+  form {
+    border-radius: 10px;
+    width: 100%;
+  }
+
+  form input {
+    width: 100%;
+    padding: 15px;
+    border-radius: 5px;
+    /* border: none; */
+    background-color: #e0e0e0;
+  }
+
+  form button {
+    border-radius: 5px;
+    margin-top: 10px;
+  }
+
+  /***************************************************end Sigup************************************************************************** */
+
+  /***************************************************Index************************************************************************** */
+  .service_section .box .img-box {
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+    margin: 20px auto 0;
+    height: 100%;
+  }
+
+  /***************************************************end Index************************************************************************** */
+
+  /***************************************************PostC************************************************************************** */
+  .col-md-1,
+  .col-lg-2 {
+    flex: 0 0 48%;
+    /* คอลัมน์จะกว้าง 48% เมื่อหน้าจอใหญ่ขึ้น */
+  }
+
+  .col-lg-3 {
+    flex: 0 0 32%;
+    /* ปรับความกว้างของคอลัมน์ให้พอดีกับหน้าจอที่กว้างขึ้น */
+  }
+
+  button {
+    width: auto;
+  }
+
+  .footer_container {
+    padding: 10px;
+  }
+
+  .info_section {
+    margin: 10px 0;
+  }
+
+  .container {
+    max-width: 100%;
+    padding: 0 10px;
+  }
+
+  .ggg h1 {
+    font-size: 1.5rem;
+    text-align: center;
+  }
+
+  .row1 {
+    margin-top: 30px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+  }
+
+  .col-md-1,
+  .col-lg-2,
+  .col-lg-3 {
+    flex: 0 0 100%;
+    /* ให้แต่ละคอลัมน์มีความกว้าง 100% บนมือถือ */
+    margin-bottom: 15px;
+    /* เว้นระยะห่างระหว่างคอลัมน์ */
+  }
+
+  .info_contact h4,
+  .info_links h4 {
+    font-size: 1rem;
+  }
+
+  button {
+    width: 100%;
+    padding: 10px;
+    background-color: #007bff;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    margin-bottom: 10px;
+    font-size: 1rem;
+  }
+
+  h1 span2 {
+    color: #ffffff;
+  }
+
+  hr {
+    margin: 20px 0;
+  }
+
+  /***************************************************end PostC************************************************************************** */
+
+  /***************************************************Shop************************************************************************** */
+  .col-md-2,
+  .col-lg-2,
+  .col-lg-0 {
+    flex: 0 0 48%;
+    /* คอลัมน์จะกว้าง 48% บนหน้าจอใหญ่ขึ้น */
+  }
+
+  img {
+    max-width: 120px;
+  }
+
+  h1 {
+    font-size: 1.5rem;
+  }
+
+  button {
+    width: auto;
+  }
+
+  .box {
+    padding: 10px;
+    border: 1px solid #ddd;
+    margin-bottom: 15px;
+    border-radius: 8px;
+  }
+
+  .container1 {
+    max-width: 100%;
+  }
+
+  .row2 {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+  }
+
+  .col-md-2,
+  .col-lg-2,
+  .col-lg-0 {
+    flex: 0 0 100%;
+    /* ให้คอลัมน์แต่ละอันมีขนาด 100% บนหน้าจอโทรศัพท์ */
+    margin-bottom: 10px;
+  }
+
+  img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 8px;
+  }
+
+  h1 {
+    font-size: 1.2rem;
+    margin: 5px 0;
+    text-align: center;
+  }
+
+  a,
+  a1 {
+    font-size: 1rem;
+    display: block;
+    margin-bottom: 5px;
+  }
+
+  button {
+    width: 100%;
+    padding: 10px;
+    background-color: #007bff;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    font-size: 1rem;
+    margin-bottom: 10px;
+  }
+
+  /***************************************************end Shop************************************************************************** */
+
+  /***************************************************ShopShow************************************************************************** */
+  .text_shop .col-md-2,
+  .text_shop .col-lg-2 {
+    flex: 0 0 48%;
+    /* ปรับความกว้างของคอลัมน์เป็น 48% เมื่อหน้าจอใหญ่ขึ้น */
+  }
+
+  .text_shop .col-md-3,
+  .text_shop .col-lg-3,
+  .text_shop .col-lg-4 {
+    flex: 0 0 32%;
+    /* ปรับความกว้างของคอลัมน์ตามความเหมาะสม */
+  }
+
+  .button_shop {
+    flex-direction: row;
+    justify-content: space-between;
+  }
+
+  .button_shop button {
+    width: auto;
+    margin: 0 5px;
+  }
+
+  a1 {
+    font-size: 1.5rem;
+  }
+
+  .hr {
+    margin: 10px 0;
+  }
+
+  .text_shop {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    margin-top: 10px;
+  }
+
+  .text_shop .col-md-2,
+  .text_shop .col-md-3,
+  .text_shop .col-lg-2,
+  .text_shop .col-lg-3,
+  .text_shop .col-lg-4 {
+    flex: 0 0 100%;
+    /* ให้แต่ละคอลัมน์มีความกว้าง 100% บนหน้าจอมือถือ */
+    margin-bottom: 15px;
+  }
+
+  .text_shop img {
+    max-width: 100%;
+    /* ปรับขนาดภาพให้พอดีกับความกว้างของคอลัมน์ */
+    height: auto;
+    margin-bottom: 10px;
+  }
+
+  .button_shop {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .button_shop button {
+    width: 100%;
+    padding: 10px;
+    background-color: #007bff;
+    /* color: white; */
+    border: none;
+    border-radius: 5px;
+    margin-bottom: 10px;
+    font-size: 1rem;
+  }
+
+  /* ปรับขนาดตัวอักษรให้เหมาะกับหน้าจอมือถือ */
+  a1 {
+    font-weight: 600;
+    font-size: 1.2rem;
+  }
+
+  /***************************************************end ShopShow************************************************************************** */
+
+  /***************************************************DetailA************************************************************************** */
+  button1 {
+    width: auto;
+    font-size: 1.5rem;
+  }
+
+  h1 {
+    font-size: 2rem;
+  }
+
+  .pictures img {
+    max-width: 80%;
+  }
+
+  .about_section2 {
+    background-color: #00204a;
+    /* ใส่สีที่ต้องการ */
+    min-height: 100vh;
+    /* ตั้งความสูงของส่วนนี้ให้เต็มหน้าจอ */
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+  }
+
+  button1 {
+    color: white;
+    padding: 10px;
+    border: none;
+    border-radius: 5px;
+    margin-bottom: 20px;
+    width: 100%;
+    text-align: left;
+    font-size: 1.2rem;
+    display: block;
+  }
+
+  button1 a {
+    text-decoration: none;
+    color: white;
+  }
+
+  h1 {
+    font-size: 1.8rem;
+    text-align: center;
+    margin-bottom: 20px;
+  }
+
+  span2 {
+    color: #333333;
+    font-size: 1.5rem;
+  }
+
+  .centerD {
+    text-align: center;
+    margin-bottom: 20px;
+  }
+
+  .pictures-box1 {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 10px;
+  }
+
+  .pictures img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 10px;
+  }
+
+  .text_detail {
+    padding: 10px;
+    font-size: 1.1rem;
+  }
+
+  .text_detail a {
+    font-weight: bold;
+    color: #333;
+  }
+
+  .text_detail a1 {
+    color: #e6e933;
+  }
+
+  p {
+    margin: 10px 0;
+  }
+
+  /***************************************************end DetailA************************************************************************** */
+
+  /***************************************************Match************************************************************************** */
+  .flexbox_flexbox {
+    flex-direction: row;
+    justify-content: space-between;
+    max-width: 800px;
+  }
+
+  .item_item {
+    flex: 0 0 45%;
+    /* แบ่งความกว้างของ item */
+  }
+
+  /***************************************************end Match************************************************************************** */
+
+  /***************************************************DetailS************************************************************************** */
+  .full {
+    background-color: #00204a;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+  }
+
+  /***************************************************end DetailS************************************************************************** */
+  .about_section span2{
+    margin: 0;
+  }
+}
+
+@media (max-width: 768px) {
+  .topnav.responsive {
+    position: relative;
+  }
+
+  .topnav.responsive a.icon {
+    position: absolute;
+    right: 0;
+    top: 0;
+  }
+
+  .topnav.responsive a {
+    float: none;
+    display: block;
+    text-align: left;
+  }
+}
+
+@media (min-width: 768px) {}
+
+@media (max-width: 576px) {
+  .header_section .header_top .contact_nav a span {
+    display: none;
+  }
+
+  .ggg {
+    margin-top: 30px;
+  }
+
+  .client_section .client_container {
+    width: 100%;
+  }
+
+  .client_section .box {
+    margin: 0;
+  }
+
+  .owl-nav {
+    display: flex;
+    justify-content: center;
+    margin-top: 45px;
+  }
+
+  .client_section .owl-carousel .owl-nav .owl-prev,
+  .client_section .owl-carousel .owl-nav .owl-next {
+    position: unset;
+    margin: 0 2.5px;
+  }
+}
+
+@media (max-width: 480px) {
+  .slider_section .detail-box h1 {
+    font-size: 2rem;
+  }
+
+  .ggg {
+    margin-top: 30px;
+  }
+
+  .track_section form {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .track_section form input {
+    width: 100%;
+  }
+
+  .track_section form button {
+    padding: 10px 60px;
+    margin-top: 10px;
+  }
+
+  .img-box img {
+    width: 60%;
+    /* ปรับขนาดให้เล็กลงเพิ่มเติมสำหรับหน้าจอที่เล็กกว่า */
+  }
+}
+
+@media (max-width: 420px) {
+  .service_section .box {
+    flex-direction: column;
+  }
+
+  .ggg {
+    margin-top: 80px;
+  }
+
+  .service_section .box .img-box {
+    justify-content: flex-start;
+    margin-bottom: 15px;
+  }
+}
+
+@media (max-width: 376px) {
+  .ggg {
+    margin-top: 80px;
+  }
+}
+
+@media (max-width: 275px) {
+  .ggg {
+    margin-top: 80px;
+  }
+}
+
+@media (min-width: 1200px) {
+  .container {
+    max-width: 1170px;
+  }
+}
+
+@media (max-width: 1300px) {
+  .footer_container {
+    border-radius: 250px 0 0 0;
+  }
+}
